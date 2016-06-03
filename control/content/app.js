@@ -32,8 +32,8 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
     } else {
       $scope.data = {
         content: {
-          url: "http://hellacompany.com/",
-          view: $scope.viewType.NATIVE_IN_APP
+          url: "http://myplacebag.com/menu/530bc52631131c8060000001",
+          view: $scope.viewType.IN_APP_POPUP
         }
       };
     }
