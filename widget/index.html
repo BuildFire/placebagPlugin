@@ -28,7 +28,7 @@
 <body class="no-scroll" ng-controller="webviewPluginCtrl" ng-cloak>
 <div class="scrollable"
      ng-if="(data.content.view == 'Native In App') || data.content.openInApp">
- <p ng-if="loading" style="position: absolute; top: 0; display: inline-block; width: 100%; left: 0; background: #eee; text-align: center; color: #333;">Loading....</p>
+<!-- <p ng-if="loading" style="position: absolute; top: 0; display: inline-block; width: 100%; left: 0; background: #eee; text-align: center; color: #333;">Loading....</p>-->
   <iframe ng-src="{{ url }}"
           style="height:100%; width:1px; min-width:100%;"
           scrolling="{{isIOS ? 'no' : 'auto'}}"
