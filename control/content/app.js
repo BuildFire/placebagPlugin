@@ -83,6 +83,10 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         data.content.url = "http://" + data.content.url;
       }
 
+      if(!data.content.url.match("^http://myplacebag.com/menu\\W")){
+        $scope.urlValid = false;
+        $scope.urlInValid = true;
+      }
       if (data.content.openInApp != undefined)
         data.content.openInApp = null;
       buildfire.datastore.save(data, function (err, result) {
