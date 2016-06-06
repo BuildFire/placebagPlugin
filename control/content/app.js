@@ -13,7 +13,12 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
   /*
    * Go pull any previously saved data
    * */
-  buildfire.datastore.get(function (err, result) {
+
+  $scope.gotToPage=function(){
+      window.open('https://placebag.com/contact-us', '_blank');
+  }
+
+   buildfire.datastore.get(function (err, result) {
     if (!err) {
       $scope.datastoreInitialized = true;
     } else {
@@ -83,6 +88,10 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         data.content.url = "http://" + data.content.url;
       }
 
+      if(!data.content.url.match("^http://myplacebag.com/menu\\W")){
+        $scope.urlValid = false;
+        $scope.urlInValid = true;
+      }
       if (data.content.openInApp != undefined)
         data.content.openInApp = null;
       buildfire.datastore.save(data, function (err, result) {

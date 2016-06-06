@@ -54,7 +54,7 @@
   <hr class="none">
   <div class="item clearfix row">
     <div class="col-md-9 pull-right">
-      <div class="radio radio-primary radio-block">
+     <!-- <div class="radio radio-primary radio-block">
         <input id="inapp" type="radio" ng-model="data.content.view"
                ng-value="viewType.NATIVE_IN_APP"
                name="viewType" ng-change="changeViewType()">
@@ -71,26 +71,29 @@
                ng-value="viewType.EXTERNAL_BROWSER"
                name="viewType" ng-change="changeViewType()">
         <label for="external">Device's default external browser</label>
-      </div>
-      <br>
+      </div>-->
+     <!-- <p >Note 1: Dont have a Placebag account, click <a href="https://placebag.com/contact-us">here</a> to sign up.</p>-->
+        <p class="info padding-zero">Dont have a Placebag account click <a ng-click="gotToPage()">here</a> to register</p>
 
-      <p class="info padding-zero">Note 1: For the best user experience, link to
-        mobile optimized content. <br>(Disclaimer: Some websites will show
-        mobile version of site only on mobile devices.)</p>
 
-      <p class="info padding-zero">Note 2: Certain websites like Google,
-        Amazon, and others have limitations and/or internal policies that
-        prohibit it from being shown in the app's native component.
-        Therefore, if your web page does not show up in this selection, please
-        try using one of the other two methods.</p>
 
-      <p class="info padding-zero">Note 3: If you are taking payments through
-        this web page, you must open the the URL outside of the app or the app
-        will get rejected by Apple in the submission review process.</p>
+        <!--  <p class="info padding-zero">Note 1: For the best user experience, link to
+            mobile optimized content. <br>(Disclaimer: Some websites will show
+            mobile version of site only on mobile devices.)</p>
 
-      <p class="info padding-zero">Hint: If you are taking payments, use your
-        app or content DeepLink URL to redirect back to the app after a payment
-        is made.</p>
+          <p class="info padding-zero">Note 2: Certain websites like Google,
+            Amazon, and others have limitations and/or internal policies that
+            prohibit it from being shown in the app's native component.
+            Therefore, if your web page does not show up in this selection, please
+            try using one of the other two methods.</p>
+
+          <p class="info padding-zero">Note 3: If you are taking payments through
+            this web page, you must open the the URL outside of the app or the app
+            will get rejected by Apple in the submission review process.</p>
+
+          <p class="info padding-zero">Hint: If you are taking payments, use your
+            app or content DeepLink URL to redirect back to the app after a payment
+            is made.</p>-->
     </div>
   </div>
 </div>
