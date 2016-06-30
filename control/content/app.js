@@ -37,7 +37,7 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
     } else {
       $scope.data = {
         content: {
-          url: "http://myplacebag.com/menu/530bc52631131c8060000001",
+          url: "http://myplacebag.com/menu/530bc52631131c8060000001?view=inApp",
           view: $scope.viewType.IN_APP_POPUP
         }
       };
