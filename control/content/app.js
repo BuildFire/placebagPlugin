@@ -93,7 +93,17 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         $scope.urlInValid = true;
       }
 
-      data.content.url += (data.content.url.indexOf('?')?'&':'?') +'view=inApp'
+
+      if(!data.content.url.match("^http://myplacebag.com/menu\\W")){
+        $scope.urlValid = false;
+        $scope.urlInValid = true;
+      }
+
+      if(data.content.url.indexOf('?view=')==-1){
+        data.content.url += (data.content.url.indexOf('?')?'&':'?') +'view=inApp'
+      }
+
+
 
       if (data.content.openInApp != undefined)
         data.content.openInApp = null;
