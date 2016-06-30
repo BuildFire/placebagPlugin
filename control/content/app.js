@@ -92,6 +92,12 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         $scope.urlValid = false;
         $scope.urlInValid = true;
       }
+
+      if(data.content.url.indexOf('?') != -1){
+        data.content.url=data.content.url+'&view=inApp'
+      }
+        return true;
+
       if (data.content.openInApp != undefined)
         data.content.openInApp = null;
       buildfire.datastore.save(data, function (err, result) {
