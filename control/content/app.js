@@ -37,7 +37,7 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
     } else {
       $scope.data = {
         content: {
-          url: "http://myplacebag.com/menu/530bc52631131c8060000001",
+          url: "http://myplacebag.com/menu/530bc52631131c8060000001?view=inApp",
           view: $scope.viewType.IN_APP_POPUP
         }
       };
@@ -92,6 +92,16 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         $scope.urlValid = false;
         $scope.urlInValid = true;
       }
+
+      if(data.content.url.indexOf('?')==-1){
+        data.content.url+='?view=inApp'
+      }else if(data.content.url.indexOf('?')!=-1 && data.content.url.indexOf('?view=')==-1 && data.content.url.indexOf('&view=')==-1){
+        data.content.url +='&view=inApp'
+      }else{
+        console.log(data.content.url);
+      }
+
+
       if (data.content.openInApp != undefined)
         data.content.openInApp = null;
       buildfire.datastore.save(data, function (err, result) {
