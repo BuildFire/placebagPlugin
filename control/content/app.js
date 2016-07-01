@@ -93,16 +93,13 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         $scope.urlInValid = true;
       }
 
-
-      if(!data.content.url.match("^http://myplacebag.com/menu\\W")){
-        $scope.urlValid = false;
-        $scope.urlInValid = true;
+      if(data.content.url.indexOf('?')==-1){
+        data.content.url+='?view=inApp'
+      }else if(data.content.url.indexOf('?')!=-1 && data.content.url.indexOf('?view=')==-1 && data.content.url.indexOf('&view=')==-1){
+        data.content.url +='&view=inApp'
+      }else{
+        console.log(data.content.url);
       }
-
-      if(data.content.url.indexOf('?view=')==-1){
-        data.content.url += (data.content.url.indexOf('?')?'&':'?') +'view=inApp'
-      }
-
 
 
       if (data.content.openInApp != undefined)
