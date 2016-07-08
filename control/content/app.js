@@ -88,7 +88,7 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
         data.content.url = "http://" + data.content.url;
       }
 
-      if(!data.content.url.match("^http://myplacebag.com/menu\\W")){
+      if(!(data.content.url.match("^http://myplacebag.com/menu\\W") || data.content.url.match("^http://getordering.com\\W")) ){
         $scope.urlValid = false;
         $scope.urlInValid = true;
       }
