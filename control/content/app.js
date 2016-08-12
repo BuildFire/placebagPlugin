@@ -15,8 +15,8 @@ webviewPluginApp.controller("webviewPluginCtrl", ["$scope", "$log", "$timeout", 
    * */
 
   $scope.gotToPage=function(){
-      window.open('https://placebag.com/contact-us', '_blank');
-  }
+      window.open('https://app.moonclerk.com/pay/aayfy4urzmz', '_blank');
+  };
 
    buildfire.datastore.get(function (err, result) {
     if (!err) {
